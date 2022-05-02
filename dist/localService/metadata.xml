@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZSDGW_OFFICE_ORDER_APP_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Nature_RECEP" sap:content-version="1">
+				<Key><PropertyRef Name="RefNr"/></Key><Property Name="RefNr" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="LibNr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DesNr" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SUB_CATEGORY" sap:content-version="1">
+				<Key><PropertyRef Name="Scatref"/></Key><Property Name="Refcat" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="Scatref" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="Typescat" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="Libscat" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="Dessouscat" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false"/><Property Name="Trtsouscat" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="CATEGORY" sap:content-version="1">
+				<Key><PropertyRef Name="Refcat"/></Key><Property Name="Refcat" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Libcat" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Descat" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Valcat" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="SUB_CATEGORYSet" Relationship="ZSDGW_OFFICE_ORDER_APP_SRV.Category_To_SubCategory"
+					FromRole="FromRole_Category_To_SubCategory" ToRole="ToRole_Category_To_SubCategory"/><NavigationProperty Name="Object_TYPESet" Relationship="ZSDGW_OFFICE_ORDER_APP_SRV.Category_To_TypeObjectSet"
+					FromRole="FromRole_Category_To_TypeObjectSet" ToRole="ToRole_Category_To_TypeObjectSet"/></EntityType>
+			<EntityType Name="Employees" sap:content-version="1">
+				<Key><PropertyRef Name="Zcserv"/><PropertyRef Name="Zemp"/></Key><Property Name="Zcserv" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="Zemp" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="Zlibemp" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Services" sap:content-version="1">
+				<Key><PropertyRef Name="Zcserv"/></Key><Property Name="Zcserv" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="Zlibserv" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><NavigationProperty Name="EmployeesSet" Relationship="ZSDGW_OFFICE_ORDER_APP_SRV.Service_To_EmployeeSet"
+					FromRole="FromRole_Service_To_EmployeeSet" ToRole="ToRole_Service_To_EmployeeSet"/></EntityType>
+			<EntityType Name="Document_entrant" sap:content-version="1">
+				<Key><PropertyRef Name="Zrefde"/></Key><Property Name="Zrefde" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false"/><Property Name="Zrefcat" Type="Edm.String" MaxLength="3" sap:unicode="false"/><Property Name="Zscatref" Type="Edm.String" MaxLength="8" sap:unicode="false"/><Property Name="Zreftypobj" Type="Edm.String" MaxLength="8" sap:unicode="false"/><Property Name="Zrefnr" Type="Edm.String" MaxLength="8" sap:unicode="false"/><Property Name="ZLIBCAT" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label=""/><Property Name="ZLIBSCAT" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label=""/><Property Name="ZLIBTYPOBJ" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label=""/><Property Name="ZLIB_NR" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label=""/><Property Name="Zlibclient" Type="Edm.String" MaxLength="255" sap:unicode="false"/><Property Name="Zclient" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Customer"/><Property Name="Zemp" Type="Edm.String" MaxLength="255" sap:unicode="false"/><Property Name="Zcompt" Type="Edm.String" MaxLength="255" sap:unicode="false"/><Property Name="Zstatde" Type="Edm.String" MaxLength="255" sap:unicode="false"/><Property Name="Zdar" Type="Edm.String" MaxLength="11" sap:unicode="false"/><Property Name="Zdem" Type="Edm.String" MaxLength="11" sap:unicode="false"/><Property Name="Zdif" Type="Edm.String" MaxLength="11" sap:unicode="false"/><Property Name="Zdec" Type="Edm.String" MaxLength="11" sap:unicode="false"/><Property Name="ZCSERVPI" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label=""/><Property Name="ZLIBSERVPI" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label=""/><Property Name="ZCSERV" Type="Edm.String" MaxLength="5" sap:unicode="false"/><Property Name="ZLIBSERV" Type="Edm.String" MaxLength="255" sap:unicode="false"/><Property Name="Zcom" Type="Edm.String" MaxLength="255" sap:unicode="false"/><Property Name="Zdi" Type="Edm.String" MaxLength="1" sap:unicode="false"/><Property Name="Zdu" Type="Edm.String" MaxLength="1" sap:unicode="false"/><Property Name="Zdc" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label=""/><Property Name="InstitutionDePaie" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label=""/><Property Name="FileAttahed" Type="Edm.String" MaxLength="1024" sap:unicode="false" sap:label="" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Statut_OF_DocSetSet" Relationship="ZSDGW_OFFICE_ORDER_APP_SRV.Status_OF_DOC" FromRole="FromRole_Status_OF_DOC"
+					ToRole="ToRole_Status_OF_DOC"/></EntityType>
+			<EntityType Name="Client" sap:content-version="1">
+				<Key><PropertyRef Name="Expediteur"/><PropertyRef Name="Kunnr"/></Key><Property Name="Expediteur" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="BP Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ClientName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Contactclient" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Statut" sap:content-version="1">
+				<Key><PropertyRef Name="Des"/></Key><Property Name="Des" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DesStatut" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="DOC_SERVICES" sap:content-version="1">
+				<Key><PropertyRef Name="Zcserv"/><PropertyRef Name="Zrefde"/></Key><Property Name="Zcserv" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Zrefde" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Zlibserv" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ztypepilote" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zemployee" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ztypeselection" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Object_TYPE" sap:content-version="1">
+				<Key><PropertyRef Name="Reftypobj"/></Key><Property Name="Reftypobj" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Refcat" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Libtypobj" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Destypobj" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Statut_OF_DocSet" sap:content-version="1">
+				<Key><PropertyRef Name="RefDoc"/></Key><Property Name="RefDoc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Statut" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Diffusion" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Single-Character Flag"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DateStatut" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UserStatut" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="Category_To_TypeObjectSet" sap:content-version="1"><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.CATEGORY" Multiplicity="1" Role="FromRole_Category_To_TypeObjectSet"/><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.Object_TYPE" Multiplicity="*" Role="ToRole_Category_To_TypeObjectSet"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Category_To_TypeObjectSet"><PropertyRef Name="Refcat"/></Principal>
+					<Dependent Role="ToRole_Category_To_TypeObjectSet"><PropertyRef Name="Refcat"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Category_To_SubCategory" sap:content-version="1"><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.CATEGORY" Multiplicity="1" Role="FromRole_Category_To_SubCategory"/><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.SUB_CATEGORY" Multiplicity="*" Role="ToRole_Category_To_SubCategory"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Category_To_SubCategory"><PropertyRef Name="Refcat"/></Principal>
+					<Dependent Role="ToRole_Category_To_SubCategory"><PropertyRef Name="Refcat"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Service_To_EmployeeSet" sap:content-version="1"><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.Services" Multiplicity="1" Role="FromRole_Service_To_EmployeeSet"/><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.Employees" Multiplicity="*" Role="ToRole_Service_To_EmployeeSet"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Service_To_EmployeeSet"><PropertyRef Name="Zcserv"/></Principal>
+					<Dependent Role="ToRole_Service_To_EmployeeSet"><PropertyRef Name="Zcserv"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Status_OF_DOC" sap:content-version="1"><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.Document_entrant" Multiplicity="1" Role="FromRole_Status_OF_DOC"/><End Type="ZSDGW_OFFICE_ORDER_APP_SRV.Statut_OF_DocSet" Multiplicity="*" Role="ToRole_Status_OF_DOC"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Status_OF_DOC"><PropertyRef Name="Zrefde"/></Principal>
+					<Dependent Role="ToRole_Status_OF_DOC"><PropertyRef Name="RefDoc"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZSDGW_OFFICE_ORDER_APP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Nature_RECEPSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Nature_RECEP" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="SUB_CATEGORYSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.SUB_CATEGORY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="CATEGORYSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.CATEGORY" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="EmployeesSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Employees" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ServicesSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Services" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="Document_entrantSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Document_entrant" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ClientSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Client" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="StatutSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Statut" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="DOC_SERVICESSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.DOC_SERVICES" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="Object_TYPESet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Object_TYPE" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="Statut_OF_DocSet" EntityType="ZSDGW_OFFICE_ORDER_APP_SRV.Statut_OF_DocSet" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="Category_To_TypeObjectSetSet" Association="ZSDGW_OFFICE_ORDER_APP_SRV.Category_To_TypeObjectSet" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CATEGORYSet" Role="FromRole_Category_To_TypeObjectSet"/><End EntitySet="Object_TYPESet" Role="ToRole_Category_To_TypeObjectSet"/></AssociationSet>
+				<AssociationSet Name="Category_To_SubCategorySet" Association="ZSDGW_OFFICE_ORDER_APP_SRV.Category_To_SubCategory" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="CATEGORYSet" Role="FromRole_Category_To_SubCategory"/><End EntitySet="SUB_CATEGORYSet" Role="ToRole_Category_To_SubCategory"/></AssociationSet>
+				<AssociationSet Name="Service_To_EmployeeSetSet" Association="ZSDGW_OFFICE_ORDER_APP_SRV.Service_To_EmployeeSet" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ServicesSet" Role="FromRole_Service_To_EmployeeSet"/><End EntitySet="EmployeesSet" Role="ToRole_Service_To_EmployeeSet"/></AssociationSet>
+				<AssociationSet Name="Status_OF_DOCSet" Association="ZSDGW_OFFICE_ORDER_APP_SRV.Status_OF_DOC" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="Document_entrantSet" Role="FromRole_Status_OF_DOC"/><End EntitySet="Statut_OF_DocSet" Role="ToRole_Status_OF_DOC"/></AssociationSet>
+				<FunctionImport Name="getAllClient" ReturnType="Collection(ZSDGW_OFFICE_ORDER_APP_SRV.Client)" EntitySet="ClientSet" m:HttpMethod="GET"
+					sap:action-for="ZSDGW_OFFICE_ORDER_APP_SRV.Client"><Parameter Name="Client" Type="Edm.String" Mode="In" MaxLength="40"/></FunctionImport>
+			</EntityContainer><atom:link rel="self"
+				href="https://webidecp-yknpomsv7z.dispatcher.eu2.hana.ondemand.com/destinations/APAVE/sap/opu/odata/sap/ZSDGW_OFFICE_ORDER_APP_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-yknpomsv7z.dispatcher.eu2.hana.ondemand.com/destinations/APAVE/sap/opu/odata/sap/ZSDGW_OFFICE_ORDER_APP_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

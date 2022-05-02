@@ -1,0 +1,191 @@
+<mvc:View height="100%" controllerName="com.aymax.apave.sd.BureauOrdre.BureauOrdreModify.controller.Main_VIEW"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<NavContainer id="wizardNavContainer">
+		<pages>
+			<Page id="wizardContentPage" showHeader="false">
+				<content>
+					<Wizard id="CreateProductWizard" class="sapUiResponsivePadding--header sapUiResponsivePadding--content" complete="wizardCompletedHandler">
+						<WizardStep id="FirstStep" title="{i18n>Modifier}" validated="true">
+							<MessageStrip class="sapUiSmallMarginBottom" text="{i18n>ModificationDE}" showIcon="true"/>
+							<VBox class="sapUiSmallMargin">
+								<f:SimpleForm id="SimpleFormChange480_12120Dual" editable="false" layout="ResponsiveGridLayout" title="Documents Entrants" labelSpanXL="4"
+									labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+									columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+									<f:content>
+										<core:Title text=""/>
+										<Label text="{i18n>refdoc}"/>
+										<Input id="documentId" showSuggestion="false" showValueHelp="false" value="{path: 'Zrefde', formatter: '.formatter.refFormatter'}"
+											editable="false"></Input>
+										<Label text="{i18n>datecre}"/>
+										<Input id="dateCreation" showSuggestion="false" showValueHelp="false" value="{path: 'DateCre', formatter: '.formatter.Dateformater'}"
+											editable="false"></Input>
+										<Label text="{i18n>statut}"/>
+										<Input id="statusId" showSuggestion="false" showValueHelp="false" value="{Zstatde}" editable="false"></Input>
+										<Label text="{i18n>categorie}" required="true"/>
+										<ComboBox placeholder="{i18n>categorie}*" items="{ path: '/CATEGORYSet'}" id="CategoryId" value="{Zlibcat}" change="onChangeCategorieFilter"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }" required="true">
+											<core:Item key="{Refcat}" text="{Libcat}"/>
+										</ComboBox>
+										<Label text="{i18n>sousCategorie}"/>
+										<ComboBox placeholder="{i18n>sousCategorie}*" id="subCategoryId" items="{}" required="true" change="onChangeSubCategorie">
+											<core:Item key="{Scatref}" text="{Libscat}"/>
+										</ComboBox>
+										<Label text="{i18n>natureReception}" required="true"/>
+										<ComboBox placeholder="{i18n>natureReception}*" id="natureRecId" items="{ path: '/Nature_RECEPSet' }" value="{ZlibNr}"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }" required="true" change="onChangeNatureRec">
+											<core:Item key="{RefNr}" text="{LibNr}"/>
+										</ComboBox>
+										<Label text="{i18n>typedobjet}" required="false"/>
+										<ComboBox placeholder="{i18n>typedobjet}*" id="typeObjetId" items="{}" required="false" change="onChangeTypeObj">
+											<core:Item key="{Reftypobj}" text="{Libtypobj}"/>
+										</ComboBox>
+										<Label text="{i18n>reference}" required="true"/>
+										<Input id="Ex" placeholder="{i18n>Expediteur}*" suggestionItemSelected="handlesuggestionItemSelected" showSuggestion="true"
+											valueHelpRequest=".onValueHelpRequest" editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"
+											suggestionItems="{/ClientSet}" value="{Zlibclient}" suggest=".onSuggest">
+											<suggestionItems>
+												<core:Item key="{Expediteur}" text="{Expediteur}"/>
+											</suggestionItems>
+										</Input>
+										<Input id="RefEx" placeholder="{i18n>RefExp}*" value="{RefExp}" showSuggestion="false" showValueHelp="false"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }" valueHelpRequest=".onValueHelpRequest"></Input>
+										<Input id="RefAPAV" placeholder="{i18n>RefAPAVE}*" value="{RefApave}" showSuggestion="false" showValueHelp="false"
+											valueHelpRequest=".onValueHelpRequest" editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"></Input>
+										<Label text="{i18n>Client}"/>
+										<Input id="Client" value="{Zclient}" placeholder="{i18n>Client}" showSuggestion="true" showValueHelp="false"
+											valueHelpRequest=".onValueHelpRequest" editable="{= ${Zstatid} === '002' || ${Zstatid} === '005'? false : true }"></Input>
+										<!--<Input id="CC" placeholder="{i18n>ContratClient}" showSuggestion="false" showValueHelp="false" valueHelpRequest=".onValueHelpRequest"-->
+										<!--	editable="false"></Input>-->
+										<Label text="{i18n>compteDe}"/>
+										<Input id="pourlecompteCombo" placeholder="{i18n>compteDe}" value="{Zcompt}"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"></Input>
+										<!--<ComboBox id="pourlecompteCombo" change="onChangeComptede" placeholder="{i18n>compteDe}" items="{ path:'/EmployeesSet' }"-->
+										<!--	selectedKey="{ZcomptId}" editable="{= ${Zstatid} === '002'|| ${Zstatid} === '005' ? false : true }">-->
+										<!--	<core:Item key="{Zemp}" text="{Zlibemp}"/>-->
+										<!--</ComboBox>-->
+										<core:Title text=""/>
+										<Label text="{i18n>DateArrive}"/>
+										<DatePicker id="D1" placeholder="{i18n>DateArrive}" value="{Zdar}" change="handleChange" class="sapUiSmallMarginBottom"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"/>
+										<Label text="{i18n>DateEmission}"/>
+										<DatePicker id="D2" placeholder="{i18n>DateEmission}" value="{Zdem}" change="handleChange" class="sapUiSmallMarginBottom" editable="false"/>
+										<Label text="{i18n>DateEcheance}"/>
+										<DatePicker id="D3" placeholder="{i18n>DateEcheance}" value="{Zdec}" change="handleChange" class="sapUiSmallMarginBottom"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"/>
+										<Label text="{i18n>DateExp}"/>
+										<DatePicker id="D4" placeholder="{i18n>DateExp}" change="handleChange" class="sapUiSmallMarginBottom" value="{Zdexp}"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"/>
+										<Label text="{i18n>Montant}"/>
+										<Input id="MM" placeholder="{i18n>MontantTND}" value="{Amount}" editable="{= ${Zstatid} === '002' || ${Zstatid} === '005'? false : true }"></Input>
+										<Label text="{i18n>natureReg}"/>
+										<ComboBox id="natureReglementCombo" change="onChangeNatureReg" placeholder="{i18n>natureReg}" items="{ path:'/NATURE_REGSet' }"
+											selectedKey="{ZrefNreg}" editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }">
+											<core:Item key="{RefNreg}" text="{LibNreg}"/>
+										</ComboBox>
+										<Label text="{i18n>ReferencReglement}"/>
+										<Input id="RPRR" placeholder="{i18n>ReferencReglement}" value="{RefPpaie}"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"></Input>
+										<Label text="{i18n>InstitutionPaie}"/>
+										<Input id="IIP" placeholder="{i18n>InstitutionPaie}" value="{InstitutionDePaie}"
+											editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"></Input>
+										<Label text="{i18n>StatutDocument}"/>
+										<VBox width="100%">
+											<!--							<CheckBox text="{i18n>DocumentUrgent}" visible="false"/> -->
+											<CheckBox id="Zdi" text="{i18n>DocumentInterne}" selected="{path: 'Zdi', formatter: '.formatter.CheckFormatter'}"
+												editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"/>
+											<CheckBox id="Zdu" text="{i18n>DocumentUrgent}" selected="{path: 'Zdu', formatter: '.formatter.CheckFormatter'}"
+												editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"/>
+											<CheckBox id="Zdc" text="{i18n>DocumentConfidientiel}" selected="{path: 'Zdc', formatter: '.formatter.CheckFormatter'}"
+												editable="{= ${Zstatid} === '002' || ${Zstatid} === '005' ? false : true }"/>
+										</VBox>
+									</f:content>
+								</f:SimpleForm>
+								<Label text="{i18n>Description}" class="sapUiSmallMarginTop sapUiTinyMarginBottom"/>
+								<TextArea id='com' value="{Zcom}" maxLength="500" width="100%" placeholder="Commentaire" editable="{= ${Zstatid} === '002' ? false : true }"/>
+								<!--<Label text="{i18n>Coverphoto}"/>-->
+								<!--<u:FileUploader width="100%" tooltip="{i18n>attachmentText}" style="Emphasized" placeholder="{i18n>attachemntPlace}"/>-->
+								<UploadCollection id="pjUploader" uploadUrl="/sap/opu/odata/sap/ZSDGW_OFFICE_ORDER_APP_SRV/Pieces_jointes" tooltip="{i18n>attachmentText}"
+									items="{ path: 'piecesJointesModel>/', templateShareable: false }" uploadEnabled="{UIConfig>/enability/wizardFirstStep/uploadEnabled}"
+									mode="SingleSelectMaster" beforeUploadStarts=".pjUpdateHdler.onBeforeUploadStarts" uploadComplete=".pjUpdateHdler.onUploadComplete"
+									instantUpload="false">
+									<items>
+										<UploadCollectionItem fileName="{piecesJointesModel>FileName}" mimeType="{piecesJointesModel>Mimetype}" enableEdit="false"
+											enableDelete="true" visibleDelete="true" deletePress=".pjUpdateHdler.onPjDelete"
+											url="/sap/opu/odata/sap/ZSDGW_OFFICE_ORDER_APP_SRV/Document_entrantSet('{Zrefde}')/ToPiecesJointes(FileName='{piecesJointesModel>FileName}')/$value"
+											visibleEdit="false"></UploadCollectionItem>
+									</items>
+								</UploadCollection>
+							</VBox>
+						</WizardStep>
+						<WizardStep id="SecondStep" validated="false" title="{i18n>AffecterServices}" activate="additionalInfoValidation">
+							<MessageStrip class="sapUiSmallMarginBottom" text="{i18n>AffecterServicesText}" showIcon="true"/>
+							<Table id="idProductsTable" inset="false" items="{ path: '/DOC_SERVICESSet' }">
+								<!--<Table id="idProductsTable" inset="false" items="{ path: '/DOC_SERVICESSet' }">-->
+								<!--	<headerToolbar>
+									<OverflowToolbar>
+										<Title id="title" text=""/>
+										<ToolbarSpacer/>
+									
+									</OverflowToolbar>
+								</headerToolbar>-->
+								<headerToolbar>
+									<OverflowToolbar id="otbSubheader">
+										<ToolbarSpacer/>
+										<!--<Button id="editButton" text="Edit" type="Transparent" press="onEdit"/>-->
+										<!--<Button icon="sap-icon://add" tooltip="ajouter service" press="onPersonalizationDialogPress"/>-->
+										<Button id="addServiceBt" tooltip="Ajouter Service" class="sapUiSmallMarginBottom" icon="sap-icon://add"
+											press=".handleTableSelectDialogPress">
+											<customData>
+												<core:CustomData key="multi" value="true"/>
+											</customData>
+										</Button>
+									</OverflowToolbar>
+								</headerToolbar>
+								<columns>
+									<Column width="20%">
+										<Text text="{i18n>Pilote}"/>
+									</Column>
+									<Column width="20%">
+										<Text text="{i18n>Selection}"/>
+									</Column>
+									<Column width="40%">
+										<Text text="{i18n>Service}"/>
+									</Column>
+									<Column width="30%">
+										<Text text="{i18n>Employés}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<!--	<CheckBox selected="{path: 'Ztypepilote', formatter: '.formatter.ServiceFormatter'}"/>
+											<CheckBox selected="{path: 'Ztypeselection', formatter: '.formatter.ServiceFormatter'}"/>-->
+											<!--<CheckBox selected="{Ztypepilote}"/>-->
+											<RadioButton selected="{Ztypepilote}" select="onPiloteSelected" />
+											<CheckBox selected="{Ztypeselection}" select="onServiceSelectionSelected" enabled="{= !${Ztypepilote}}" />
+											<Text text="{Zlibserv}"/>
+											<!--<ComboBox id="MultiBoxCategorie" change="onSelectionChange" selectedKey="{Zemployee}" items="{}">-->
+											<!--	<core:Item key="{Zemp}" text="{Zlibemp}"/>-->
+											<!--</ComboBox>-->
+											<MultiComboBox id="MultiBoxCategorie" selectionChange="onEmployeAfterSelection" enabled="{= !${Ztypepilote}}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</WizardStep>
+					</Wizard>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<Button id="messagePopoverBtn" icon="sap-icon://alert" text="{= ${Messages>/}.length }" type="Emphasized"
+							press=".MsgPopOverHdler.handleMessagePopoverPress"/>
+						<ToolbarSpacer/>
+						<Button text="{i18n>Sauvegarder}" press="handleWizardUpdate"/>
+						<Button text="{i18n>Annuler}" press="handleWizardCancel"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</NavContainer>
+</mvc:View>

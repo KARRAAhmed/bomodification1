@@ -1,0 +1,19 @@
+{
+	"visibility": {},
+	"editability": {
+		"Diffuser": false,
+		"Modifier": false
+	},
+	"enability": {
+		"wizardFirstStep": {
+			"uploadEnabled": true
+		},
+		"wizarSecondStep": ""
+	},
+	"count": {},
+	"valueState": {},
+	"tooltip": {
+		"Diffuser": "Veuillez selectionnez un ou plusieurs documents",
+		"Modifier": "Veuillez selectionnez un document"
+	}
+}

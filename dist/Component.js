@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/UIComponent","sap/ui/Device","com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/model/models"],function(e,a,r){"use strict";return e.extend("com.aymax.apave.sd.BureauOrdre.BureauOrdreModify.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments)}})});

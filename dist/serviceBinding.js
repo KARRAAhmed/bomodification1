@@ -1,0 +1,1 @@
+function initModel(){var a="/sap/opu/odata/sap/ZSDGW_OFFICE_ORDER_APP_SRV/";var e=new sap.ui.model.odata.ODataModel(a,true);sap.ui.getCore().setModel(e)}

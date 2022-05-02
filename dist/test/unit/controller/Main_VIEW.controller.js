@@ -1,0 +1,1 @@
+sap.ui.define(["APAVE/Bu_Ordre_Create/controller/Main_VIEW.controller"],function(n){"use strict";QUnit.module("Main_VIEW Controller");QUnit.test("I should test the Main_VIEW controller",function(t){var e=new n;e.onInit();t.ok(e)})});

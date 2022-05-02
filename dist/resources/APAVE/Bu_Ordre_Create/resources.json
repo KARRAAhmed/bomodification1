@@ -1,0 +1,107 @@
+{
+    "resources": [
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/manifest.json"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/model/UIConfig.json"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/Utils/PjUpdate.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/Utils/MessagesPopOverHandler.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/model/models.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/model/formatter.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/Main_VIEW.controller.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/List_VIEW.controller.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/serviceBinding.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/Component.js"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/manifest-bundle.zip"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/model/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/Utils/PjUpdate-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/Utils/MessagesPopOverHandler-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/Main_VIEW-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/controller/List_VIEW-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/serviceBinding-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/view/Main_VIEW.view.xml"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/view/List_VIEW.view.xml"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/localService/metadata.xml"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/fragment/PersonalizationDialog.fragment.xml"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/fragment/ListService.fragment.xml"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/css/style.css"
+        },
+        {
+            "name": "../../com/aymax/apave/sd/BureauOrdre/BureauOrdreModify/index.html"
+        }
+    ]
+}
